@@ -1,3 +1,5 @@
+pip install requirements.txt
+
 Run python manage.py makemigrations
 
 Run python manage.py migrate
