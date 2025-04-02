@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,6 +89,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'musicapp.wsgi.application'
 
 AUTH_USER_MODEL = 'authentication.CustomUser'
+
+SIMPLE_JWT = {
+    "ALGORITHM": "RS256",  # Use asymmetric encryption
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
